@@ -1,6 +1,6 @@
 import React from 'react'
 import {SiNike} from "react-icons/si";
-import Navigation from './navigation';
+import Navigation from '@/components/navigation';
 function Header() {
   return (
     <header className='flex items-center justify-between h-[50px] w-full bg-white fixed z-10 flex-col fixed'>
