@@ -7,7 +7,7 @@ const addNewProduct=asyncHandler(async(req,res,next)=>{
 
     const createdProduct=await productModel.create(productDatas);
 
-    res.status('200').json({
+    res.status(200).json({
         success:true,
         message:"Ürün başarıyla eklendi",
         product:{
