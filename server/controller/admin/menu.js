@@ -1,5 +1,6 @@
 const asyncHandler=require('express-async-handler');
 const productModel=require('../../models/Database/products');
+const CustomError=require('../../models/Error/customError')
 
 const addNewProduct=asyncHandler(async(req,res,next)=>{
     const {productName,productPrice,productImage,productCategory}=req.body;
@@ -23,6 +24,9 @@ const updateProduct=asyncHandler(async(req,res,next)=>{
 
     const product=await productModel.findOne({name:oldProductName,category:oldProductCategory});
 
+    if(product==null)
+       return next(new CustomError("Böyle bir ürün bulunamadı !",400));
+
     product.name=newProductName;
     product.price=newProductPrice;
     product.imageUrl=newProductImage;
@@ -42,7 +46,10 @@ const deleteProduct=asyncHandler(async(req,res,next)=>{
 
     const deletedProduct=await productModel.findOneAndDelete({name:productName,category:productCategory})
 
-    res.status(200).json({
+    if(deletedProduct==null)
+      return next(new CustomError("Böyle bir ürün bulunamadı !",400));
+    
+        res.status(200).json({
         success:true,
         message:"Ürün başarıyla silindi",
         deletedProduct

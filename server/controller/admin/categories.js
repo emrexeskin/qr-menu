@@ -19,6 +19,9 @@ const updateCategory=asyncHandler(async(req,res,next)=>{
 
     const updateCategory = await categoryModel.findOne({name:oldCategoryName});
 
+    if(updateCategory==null)
+       return next(new CustomError("Böyle bir kategori bulunamadı !",400));
+
     updateCategory.name=newCategoryName;
 
     await updateCategory.save();
@@ -34,6 +37,9 @@ const deleteCategory=asyncHandler(async(req,res,next)=>{
     const {categoryName}=req.body;
 
     const deletedCategory = await categoryModel.findOneAndDelete({name:categoryName});
+
+    if(deletedCategory==null)
+       return next(new CustomError("Böyle bir kategori bulunamadı !",400));
 
     res.status(200).json({
         success:true,
