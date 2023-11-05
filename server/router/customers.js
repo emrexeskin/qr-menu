@@ -1,9 +1,9 @@
 const express=require('express');
 const router=express.Router();
 
-const {getAllCategoriesAndProductsController}=require('../controller/customers');
+const {getAllCategoriesAndProducts}=require('../controller/customers');
 
-router.get('/getAllCategoriesAndProducts',getAllCategoriesAndProductsController);
+router.get('/getAllCategoriesAndProducts',getAllCategoriesAndProducts);
 
 
 module.exports=router;
