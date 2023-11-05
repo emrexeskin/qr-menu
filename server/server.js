@@ -5,6 +5,7 @@ require("dotenv").config({path: "./config/config.env"});
 
 const connectDb=require('./helper/database/connectDb');
 const routerIndex=require('./router/index');
+const customErrorHandler = require('./helper/error/errorHandler');
 
 const app=express();
 const port=process.env.PORT;
@@ -16,10 +17,11 @@ app.use(cors({
 app.use(express.json());
 app.use(cookieParser());
 
-
 app.use('/api',routerIndex);
 
 
+
+app.use(customErrorHandler);
 
 app.listen(port,()=>{
 console.log(`Backend server ${port} portunda ayaga kalkti`);

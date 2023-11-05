@@ -1,6 +1,6 @@
 const asyncHandler=require('express-async-handler')
-const categoryModel=require('../models/categories');
-const productsModel=require('../models/products');
+const categoryModel=require('../../models/Database/categories');
+const productsModel=require('../../models/Database/products');
 
 
 const getAllCategoriesAndProducts = asyncHandler(async (req,res,next) =>{
