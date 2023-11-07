@@ -1,6 +1,8 @@
 import { Lato } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/header'
+import SearchBar from '@/components/search-bar'
+import ScrollNav from '@/components/scroll-nav'
 const lato = Lato({ weight: ["100", "300", "400", "700","900"],subsets: ['latin']  })
 
 export const metadata = {
@@ -12,7 +14,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className='!scroll-smooth'>
       <body className={lato.className}>
-      <Header/>
+        <section className='flex flex-col items-center justify-center gap-8'>
+        <Header/>
+        <SearchBar></SearchBar>
+        <ScrollNav></ScrollNav>
+        </section>
         {children}
         </body>
     </html>
