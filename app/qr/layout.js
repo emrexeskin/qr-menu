@@ -1,7 +1,6 @@
 import { Lato } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/header'
-
 const lato = Lato({ weight: ["100", "300", "400", "700","900"],subsets: ['latin']  })
 
 export const metadata = {
@@ -11,9 +10,9 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className='!scroll-smooth'>
       <body className={lato.className}>
-        <Header/>
+      <Header/>
         {children}
         </body>
     </html>

@@ -1,6 +1,7 @@
 "use client"
 import { useEffect,useState } from 'react';
 import Category from '@/components/category'
+
 export default function Home() {
   const [categoriesAndProducts, setCategoriesAndProducts] = useState({
     success:false,
@@ -18,6 +19,7 @@ export default function Home() {
       {categoriesAndProducts.categories.map((category, index) => (
         <Category key={index} products={categoriesAndProducts.products} name={category.name}/>
       ))}
+     
     </main>
   );
 }

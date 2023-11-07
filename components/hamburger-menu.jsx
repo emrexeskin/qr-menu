@@ -30,9 +30,9 @@ const HamburgerMenu = () => {
       {isOpen && (
         <div className=" bg-white absolute top-16 left-0 right-0 border-b border-gray-200 z-10 m-0">
                     {categoriesAndProducts.categories.map((category) => (
-          <ul key={category.hash} className='my-2 text-center'>
-            <li className="my-2">
-            <Link href={"#"+category.hash}>
+          <ul  className='my-2 text-center'>
+            <li key={category.name} className="my-2">
+            <Link href={`#${category.name}`}>
               {category.name}
             </Link>
             </li>
