@@ -1,13 +1,21 @@
 import React from 'react'
-
+import { AiOutlinePlus } from 'react-icons/ai';
 function Product({ name, price, image }) {
   console.log(image);
   return (
-    <div style={{backgroundImage:`url("${image}")`}}  className="px-3 py-1 flex items-start justify-end flex-col rounded-md h-[200px] w-1/2 bg-center bg-cover shadow-[0px_-50px_20px_-1px_rgba(0,0,0,0.37)_inset] grow basis-1/3">
-      <h3 className='text-white text-[20px]'>{name}</h3>
-      <p className='text-white text-[16px]'>{price} ₺</p>
+    <div className="flex items-center justify-between w-full h-full border-b border-gray-200 py-5">
+    <div style={{backgroundImage:`url("${image}")`}}  className="rounded-md w-1/4 h-[100px] bg-center bg-cover bg-no-repeat"></div>
+    <div className='flex flex-col items-start justify-between w-1/3'>
+    <h3 className=' text-[20px] bold'>{name}</h3>
+    <p className='break-words w-full text-gray-400 text-ellipsis line-clamp-2'>Domates,zeytin,pepperoni,biber ve mısır</p>
     </div>
-  )
+    <div className='flex flex-col items-end justify-between w-1/4 gap-4'>
+    <button className=' flex items-center justify-center p-2 border rounded-md w-1/2'><AiOutlinePlus></AiOutlinePlus></button>
+    <p className='bold'>{price}TL</p>
+    </div>
+    
+    </div>
+    )
 }
 
 export default Product

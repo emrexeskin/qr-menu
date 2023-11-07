@@ -1,14 +1,14 @@
 import React from 'react'
 import {SiNike} from "react-icons/si";
-import Navigation from '@/components/navigation';
+import HamburgerMenu from './hamburger-menu';
 function Header() {
   return (
-    <header className='flex items-center justify-between h-[50px] w-full bg-white fixed z-10 flex-col fixed'>
-      <div className='flex items-center justify-between w-full shadow-md px-5 opacity-95'>
+    <header className='flex items-center justify-between h-[50px] w-full bg-white fixed z-10 px-5 fixed'>
+      <div className='flex items-center justify-center h-[32px] w-[32px]'> 
       <SiNike className='h-[32px] w-[32px] text-black'/>
-      <button className='object-cover rounded text-black text-[16px] h-[48px]'>Language</button>
       </div>
-      <Navigation></Navigation>
+      
+      <HamburgerMenu></HamburgerMenu>
     </header>
   )
 }
