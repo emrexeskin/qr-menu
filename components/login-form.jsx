@@ -2,8 +2,8 @@ import React from 'react'
 
 function LoginForm() {
   return (
-    <div className="min-h-screen flex items-center justify-center w-1/4">
-    <div className="max-w-md w-full p-6 space-y-8 bg-white rounded shadow-lg">
+    <div className="min-h-screen flex items-center justify-center w-full p-5">
+    <div className="max-w-sm w-full p-6 space-y-8 bg-white rounded shadow-lg">
       <div className="text-center">
         <h2 className="text-2xl font-semibold text-rose-500">Login</h2>
       </div>

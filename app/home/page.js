@@ -15,10 +15,13 @@ export default function Home() {
   },[]);
 
   return (
-    <main className="flex flex-col items-start justify-between overflow-hidden">
+    <main className="flex flex-col items-start justify-between pt-60 ">
+      <section className='w-full overflow-y-scroll absolute top-[250px] left-0 right-0 bottom-0 !scroll-smooth '>
       {categoriesAndProducts.categories.map((category, index) => (
         <Category key={index} products={categoriesAndProducts.products} name={category.name}/>
       ))}
+      </section>
+      
     </main>
   );
 }
